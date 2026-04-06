@@ -33,6 +33,46 @@ PROCEDURE:
 
 PROGRAM:
 
-OUTPUT GRAPH:
+    clc;
+    clear;
+    close;
+    
+    // Step 1: Define signals
+    x = [1 2 3 4 5];
+    y = [5 4 3 2 1];
+    
+    // Step 2: Mean
+    mean_x = mean(x);
+    
+    // Step 3: Variance
+    var_x = variance(x);
+    
+    // Step 4: Cross-correlation
+    corr_xy = xcorr(x, y);
+    
+    // Display results
+    disp("Mean of x = ");
+    disp(mean_x);
+    
+    disp("Variance of x = ");
+    disp(var_x);
+    
+    disp("Cross-correlation of x and y = ");
+    disp(corr_xy);
+    
+    // -------- PLOTTING --------
+    subplot(3,1,1);
+    plot(x);
+    title("Signal x(n)");
+    
+    subplot(3,1,2);
+    plot(y);
+    title("Signal y(n)");
+    
+    subplot(3,1,3);
+    plot(corr_xy);
+    title("Cross-Correlation x(n) and y(n)");
+![20260406_180145](https://github.com/user-attachments/assets/6dcb20f5-8656-4637-a85b-14a2f0c986e7)
 
 RESULT:
+![20260406_180150](https://github.com/user-attachments/assets/8cc28edc-3534-4394-a9f2-cd470ead7d72)
